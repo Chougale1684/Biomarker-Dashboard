@@ -1,0 +1,278 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #1976d2;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-group {
+    margin-bottom: 25px;
+}
+
+.nav-group h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.nav-group ul {
+    list-style: none;
+}
+
+.nav-group li {
+    margin-bottom: 5px;
+}
+
+.nav-group a {
+    display: block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.nav-group a:hover {
+    background-color: #f0f7ff;
+    color: #1976d2;
+}
+
+.nav-group a.show-all {
+    background-color: #1976d2;
+    color: white;
+}
+
+.nav-group a.show-all:hover {
+    background-color: #1565c0;
+}
+
+.nav-group a.load-sample {
+    background-color: #4caf50;
+    color: white;
+}
+
+.nav-group a.load-sample:hover {
+    background-color: #388e3c;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.upload-section {
+    display: flex;
+    align-items: center;
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selected-file {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 10px;
+}
+
+.process-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.process-button:hover:not(:disabled) {
+    background-color: #388e3c;
+}
+
+.process-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.upload-button {
+    background-color: #1976d2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.upload-button:hover {
+    background-color: #1565c0;
+}
+
+/* Chart Section Styles */
+.chart-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+    height: 400px;
+    position: relative;
+}
+
+/* Biomarker Cards Styles */
+.biomarker-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card .value {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.card .trend {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .date-range {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .upload-section {
+        width: 100%;
+    }
+
+    .upload-button {
+        display: block;
+        text-align: center;
+    }
+
+    .biomarker-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Chart Legend Styles */
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
